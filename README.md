@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Management
 
-## Getting Started
+Bu proje, React ve Next.js kullanılarak geliştirilmiş basit bir blog yönetim uygulamasıdır. Kullanıcılar, var olan blogları listeleyebilir, yeni bir blog eklemek için modal bir form kullanabilir. Uygulama, bileşen tabanlı bir mimariye sahip olup esnek ve yeniden kullanılabilir UI bileşenleri içerir.
 
-First, run the development server:
+## Proje Yapısı
+
+```
+├── public
+│   └── images                # Statik görsellerin bulunduğu klasör
+├── src
+│   ├── app
+│   │   ├── layout.js         # Uygulama genel düzenini belirleyen dosya
+│   │   └── page.js           # Ana sayfa bileşeni
+│   ├── components
+│   │   ├── BlogList
+│   │   │   ├── AddNewBlog.jsx # Yeni blog ekleme formu bileşeni
+│   │   │   ├── BlogList.jsx   # Blogları listeleyen bileşen
+│   │   │   └── BlogItem.jsx   # Tek bir blog öğesini gösteren bileşen
+│   │   └── UI
+│   │       └── Button.jsx     # Özel bir buton bileşeni
+│   └── data
+│       └── blogData.js       # Varsayılan blog verisi
+├── .gitignore
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+└── README.md
+```
+
+### Bileşenler
+
+- **BlogItem**: Tek bir blog öğesinin başlık, yazar, tarih ve içeriğini gösterir.
+- **BlogList**: Tüm blogları listeleyen bileşendir. Her blog öğesi için `BlogItem` bileşenini kullanır.
+- **AddNewBlog**: Yeni bir blog eklemek için bir modal form sağlar. `title`, `author`, `content`, `date`, ve `image` alanlarını içerir.
+- **Button**: Farklı renk, boyut ve tip seçeneklerine sahip özelleştirilebilir bir buton bileşenidir.
+
+## Özellikler
+
+- Blogları listeleme
+- Yeni blog eklemek için modal form açma
+- Esnek ve yeniden kullanılabilir buton bileşeni
+- Component tabanlı yapı
+
+## Gereksinimler
+
+Projeyi çalıştırmak için aşağıdaki araçların kurulu olduğundan emin olun:
+
+- Node.js (v14 veya daha güncel)
+- NPM (Node Package Manager) veya Yarn
+
+## Kurulum
+
+Projeyi bilgisayarınıza klonladıktan sonra bağımlılıkları yükleyin:
+
+```bash
+# Projeyi klonlayın
+git clone <repository-url>
+
+# Proje klasörüne girin
+cd blogmanagement
+
+# Bağımlılıkları yükleyin
+npm install
+```
+
+## Projeyi Çalıştırma
+
+Geliştirme sunucusunu başlatmak için aşağıdaki komutu çalıştırın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sunucu başlatıldığında, projeyi tarayıcıda görmek için [http://localhost:3000](http://localhost:3000) adresine gidin.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Diğer Komutlar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Build**: Uygulamayı üretim için derlemek için aşağıdaki komutu kullanın:
+  ```bash
+  npm run build
+  ```
 
-## Learn More
+- **Start**: Üretim ortamında çalıştırmak için:
+  ```bash
+  npm start
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+- **Lint**: Kod kalitesini kontrol etmek için:
+  ```bash
+  npm run lint
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Kullanılan Teknolojiler
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **React**: Kullanıcı arayüzü geliştirmek için.
+- **Next.js**: Sunucu tarafı işlemler ve geliştirme kolaylığı için.
+- **CSS**: Basit bir CSS yapılandırması ile stillendirme.
