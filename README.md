@@ -95,3 +95,13 @@ Sunucu başlatıldığında, projeyi tarayıcıda görmek için [http://localhos
 - **React**: Kullanıcı arayüzü geliştirmek için.
 - **Next.js**: Sunucu tarafı işlemler ve geliştirme kolaylığı için.
 - **CSS**: Basit bir CSS yapılandırması ile stillendirme.
+  
+## Projenin Ekran Görüntüleri
+
+Aşağıda projeye ait bazı ekran görüntüleri bulunmaktadır.
+
+### Ana Sayfa Görüntüsü
+![Ana Sayfa](./1.jpg)
+
+### Blog Ekleme Görüntüsü
+![Blog Ekleme](./2.jpg)
